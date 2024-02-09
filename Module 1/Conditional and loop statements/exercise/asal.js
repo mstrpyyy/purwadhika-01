@@ -23,4 +23,4 @@ a = 2
 b = 3
 
 //ulangan 4
-next = 2 + 3
+next = 2 + 3;
