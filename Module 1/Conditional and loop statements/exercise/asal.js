@@ -5,6 +5,7 @@ for (let i = 2; i <= position; i++) {
     const next = a + b;
     a = b;
     b = next;
+}
 
 
 //ulangan 1
