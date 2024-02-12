@@ -95,7 +95,7 @@ console.log("--flexible code--");
 console.log("---5. REMOVE SEARCH STRING---");
 console.log("--simple code--");
 const initialString = "Hello world"
-const searchString = "ell"
+const searchString = "orl"
 let frontLocator = initialString.indexOf(searchString)
 let front = initialString.slice(0, frontLocator)
 let backLocator = frontLocator + searchString.length
@@ -134,13 +134,12 @@ let lowerCase = "hello world"
 let titleCase = lowerCase.charAt(0).toUpperCase()
 let capLocator = ""
 for (t = 0; t <= lowerCase.length; t++) {
-    
+    capLocator = lowerCase.charAt(t+1);
     if (lowerCase.charAt(t) === " ") {
-        capLocator = lowerCase.charAt(t+1)
-        titleCase += capLocator.toUpperCase()
+        titleCase += capLocator.toUpperCase() 
     } else {
-        titleCase += lowerCase.charAt(t+1)
-    }
+        titleCase += capLocator
+    } 
 }
 console.log(titleCase);
 
@@ -178,15 +177,11 @@ console.log(caseSwap)
 
 
 //Write a code to find the largest of two given integers
-console.log("---9. TITLE CASE---");
+console.log("---9. NUMBER COMPARE---");
 const num1 = 42
 const num2 = 27
 
-if (num1 > num2) {
-    console.log(`${num1}`);
-} else {
-    console.log(`${num2}`);
-}
+console.log(num1 > num2 ? `${num1}` : `${num2}`)
 
 
 
