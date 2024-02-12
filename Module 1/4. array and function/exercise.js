@@ -13,9 +13,12 @@ let result = "";
 let counter = 1;
 
 function triangle(number) {
+
     for (let i = 1; i <= number; i++) {
         result = "";
+
         for (let j = 1; j <= i; j++) {
+
             result += `${counter.toString().padStart(2, '0')} `;
             counter++;
         }
