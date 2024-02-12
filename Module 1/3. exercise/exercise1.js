@@ -1,12 +1,25 @@
-console.log("hello world");
+console.log("---2. PALINDROME---");
+let string1 = "madam"
+let reverse="";
 
-//Write a code to display the multiplication table of a given integer.
-console.log("---1. MULTIPICATOR---");
-function kali(Number, Multiplicator) {
-
-    for (let i = 1; i <= Multiplicator; i++) {
-    console.log(`${Number} x ${i} = ${Number * i}` )
-    }
+for (let i = string1.length-1; i >= 0; i--) {
+    reverse += string1.charAt(i)
+}
+if(reverse.toLowerCase()==string1.toLowerCase()){
+    console.log("ini adalah palindrome");
+} else {
+    console.log("ini bukan palindrome");
 }
 
-console.log(kali(9, 10));
+// function bolakbalik(string1, reverse) {
+// for (let i = string1.length-1; i >= 0; i--) {
+//     reverse += string1.charAt(i)
+// }
+// if(reverse.toLowerCase()==string1.toLowerCase()){
+//     console.log("ini adalah palindrome");
+// } else {
+//     console.log("ini bukan palindrome");
+// }
+// }
+
+// console.log(bolakbalik("madam"))

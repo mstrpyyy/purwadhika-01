@@ -13,7 +13,7 @@ for (let i = 1; i <= Multiplicator; i++) {
 
 //Write a code to check whether a string is a palindrome or not.
 console.log("---2. PALINDROME---");
-let string1 = "babi"
+let string1 = "madam"
 let reverse="";
 
 for (let i = string1.length-1; i >= 0; i--) {
@@ -36,23 +36,40 @@ console.log(kilometer)
 
 
 //Write a code to format number as currency (IDR)
-console.log("---4. CURRENCY---");
-console.log("--simple code--");
-const toConvert = 1000
-const tripleZero = "000"
-let initialNumber = toConvert.toString()
-let frontNumber = ""
-
-let frontNumberLocator = initialNumber.lastIndexOf("000")
-let backNumber = initialNumber.slice(frontNumberLocator)
-
-for (let c = 0; c < frontNumberLocator; c++) {
-    frontNumber += initialNumber.charAt(c)
-}
-
-console.log(`Rp.${frontNumber}.${backNumber},00`)
-
+// console.log("---4. CURRENCY---");
 console.log("--flexible code--");
+const currencyAmount= 1012344
+let currencyString = currencyAmount.toString()
+let currency = ""
+let count = 0
+
+for (x = currencyString.length - 1; x >= 0; x--) {
+
+    if (count % 3 === 0 && count > 0) {
+        currency = "." + currency
+    }
+    currency = currencyString.charAt(x) + currency
+    count++
+}
+console.log(`Rp.${currency},00`);
+
+
+console.log("--simple code--");
+// const toConvert = 1000
+// const tripleZero = "000"
+// let initialNumber = toConvert.toString()
+// let frontNumber = ""
+
+// let frontNumberLocator = initialNumber.lastIndexOf("000")
+// let backNumber = initialNumber.slice(frontNumberLocator)
+
+// for (let c = 0; c < frontNumberLocator; c++) {
+//     frontNumber += initialNumber.charAt(c)
+// }
+
+// console.log(`Rp.${frontNumber}.${backNumber},00`)
+
+console.log("--using if else--");
 // const toConvert = 1000
 // let initialNumber = toConvert.toString()
 // let frontNumber = ""
@@ -93,56 +110,70 @@ console.log("--flexible code--");
 
 //Write a code to remove the first occurrence of a given “search string” from a string
 console.log("---5. REMOVE SEARCH STRING---");
-console.log("--simple code--");
-const initialString = "Hello world"
+console.log("--short code--");
+let initialString = "Hello world"
 const searchString = "orl"
-let frontLocator = initialString.indexOf(searchString)
-let front = initialString.slice(0, frontLocator)
-let backLocator = frontLocator + searchString.length
-let back = initialString.slice(backLocator)
-console.log(front + back)
+const replacor = ""
+console.log(initialString.replace(searchString,""))
 
-console.log("--flexible code--");
-// const initialString = "Hello world"
-// const searchString = "ell"
-// const lSwap = ""
-// let newString = "";
-
-// if (searchString.length > 2) {
-//     let frontLocator = initialString.indexOf(searchString)
-//     front = initialString.slice(0, frontLocator)
-//     let backLocator = frontLocator + searchString.length
-//     back = initialString.slice(backLocator)
-//     console.log(front + back)
-// } else {
-//     for ( let a = 0; a <= initialString.length; a++) {
-//         let aLocator = initialString.charAt(a)
-//     if (aLocator === searchString || aLocator === searchString.toUpperCase()) {
-//         aLocator = lSwap
-//         newString += aLocator
-//     } else {
-//         newString += aLocator
-//         }
-//     }
-// console.log(newString)}
+console.log("--simple code--");
+// let initialString = "Hello world"
+// const searchString = "orl"
+// let frontLocator = initialString.indexOf(searchString)
+// let front = initialString.slice(0, frontLocator)
+// let backLocator = frontLocator + searchString.length
+// let back = initialString.slice(backLocator)
+// console.log(front + back)
 
 
 
 //Write a code to change every letter a into * from a string of input
 console.log("---6. TITLE CASE---");
+// console.log("--using t+1--");
+// let lowerCase = "hello world"
+// let titleCase = lowerCase.charAt(0).toUpperCase()
+// let capLocator = ""
+// for (t = 0; t <= lowerCase.length; t++) {
+//     capLocator = lowerCase.charAt(t+1);
+//     if (lowerCase.charAt(t) === " ") {
+//         titleCase += capLocator.toUpperCase() 
+//     } else {
+//         titleCase += capLocator
+//     } 
+// }
+// console.log(titleCase);
+
+// console.log("--using boolean--");
+// let lowerCase = "hello world"
+// let titleCase = ""
+// let capitalSwitch = true
+// for (t = 0; t <= lowerCase.length; t++) {
+//     if (capitalSwitch === true) {
+//     titleCase += lowerCase.charAt(t).toUpperCase()
+//     capitalSwitch = false
+//     } else {
+//         titleCase += lowerCase.charAt(t)
+//     }
+
+//     if (lowerCase.charAt(t) === " ") {
+//         capitalSwitch = true
+//     }
+// }
+// console.log(titleCase);
+
+console.log("--using boolean and ||--");
 let lowerCase = "hello world"
-let titleCase = lowerCase.charAt(0).toUpperCase()
-let capLocator = ""
+let titleCase = ""
+let capitalSwitch = true
 for (t = 0; t <= lowerCase.length; t++) {
-    capLocator = lowerCase.charAt(t+1);
-    if (lowerCase.charAt(t) === " ") {
-        titleCase += capLocator.toUpperCase() 
+    if (capitalSwitch === true || lowerCase.charAt(t-1) === " ") {
+    titleCase += lowerCase.charAt(t).toUpperCase()
+    capitalSwitch = false
     } else {
-        titleCase += capLocator
-    } 
+        titleCase += lowerCase.charAt(t)
+    }
 }
 console.log(titleCase);
-
 
 
 
@@ -196,9 +227,11 @@ let order = ""
 for ( let o = 0; o < abc; o++) {
     if (numA === o) {
         order += `${o}, `
-    } else if (numB === o) {
+    } 
+    if (numB === o) {
         order += `${o}, `
-    } else if (numC=== o) {
+    } 
+    if (numC=== o) {
         order += `${o}, `
     } 
 }
@@ -262,19 +295,46 @@ if (identifier == "number") {
 
 //Write a code to change every letter a into * from a string of input
 console.log("---12. LETTER SWAP---");
+console.log("--using replaceAll function--");
+// let stringA = "An apple a day keeps the doctor away"
+// let replace = "a"
+// let replacer = "*"
+// console.log(stringA.toLowerCase().replaceAll(replace,replacer))
+
+console.log("--using regEx--");
 let stringA = "An apple a day keeps the doctor away"
-let replace = "a"
 let replacer = "*"
-let aSwap = ""
+console.log(stringA.replace(/a/gi, replacer))
 
-for ( let a = 0; a <= stringA.length; a++) {
-    let aLocator = stringA.charAt(a)
+console.log("--using replace function--");
+// let stringA = "An apple a day keeps the doctor away"
+// let replace = "a"
+// let replacer = "*"
+// let aSwap = ""
+// for ( let a = 0; a <= stringA.length; a++) {
+//     let aLocator = stringA.charAt(a).toLowerCase()
+//     if (aLocator === replace) {
+//         aSwap += aLocator.replace(replace, replacer)
+//     } else {
+//         aSwap += aLocator
+//     }
+// }
+// console.log(aSwap)
 
-if (aLocator === replace || aLocator === replace.toUpperCase()) {
-    aSwap += replacer
-} else {
-    aSwap += aLocator
-}
-}
 
-console.log(aSwap)
+console.log("--using variable only--");
+// let stringA = "An apple a day keeps the doctor away"
+// let replace = "a"
+// let replacer = "*"
+// let aSwap = ""
+// for ( let a = 0; a <= stringA.length; a++) {
+//     let aLocator = stringA.charAt(a)
+
+// if (aLocator === replace || aLocator === replace.toUpperCase()) {
+//     aSwap += replacer
+// } else {
+//     aSwap += aLocator
+// }
+// }
+
+// console.log(aSwap)
