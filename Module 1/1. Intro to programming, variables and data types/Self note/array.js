@@ -84,3 +84,10 @@ let toAdd2 = [1,2,3]
 function arrayaddition(toAdd1, toAdd2) {
     return toAdd1.map((item, index) => item + toAdd2[index])
 }
+
+
+
+//array destructing
+let arr123 = [1,2,3]
+let [a, b,c] = arr123
+console.log(a);                         //1   

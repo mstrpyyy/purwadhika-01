@@ -139,9 +139,9 @@ console.log(findEven(number));
 
 
 
-console.log("\n\n\nEX 7. EVEN NUMBER");
+console.log("\n\n\nEX 7. MAX ARRAY OUTPUT");
 //Write a function to insert multiple given integer (not an array) to an array and have a maximum size input. The array can only have a maximum size from a given input. (if the maximum size of the given input is 5 than the array can only contain 5 elements).
-console.log("<using ...integer>");
+console.log("<using ...integer>");  //rest parameter
 let arrInteger = []
 function array(maxSize, ...integer) {
     for (i = 0; i < maxSize; i++) {
@@ -151,7 +151,7 @@ function array(maxSize, ...integer) {
 let maxSize = 5
 console.log(array(maxSize, 5, 10, 24, 3, 6, 7, 8));
 
-console.log("<using string to number to array>");
+console.log("\n<using string to number to array>");
 let toInteger = "5, 10, 24, 3, 6, 7, 8"
 let integer = toInteger.split(", ")
 let arrinteger = []
@@ -180,7 +180,7 @@ console.log(combineArray(array1, array2));
 
 console.log("\n\n\nEX 9. FIND DUPLICATE");
 //Write a function to find duplicate values in an array
-let arrDuplicate = [1, 2, 2, 2, 3, 3, 4, 5, 5]
+let arrDuplicate = [1, 2, 2, 2,, 3, 3, 4, 5, 5]
 let duplicateValue = []
 
 function removeDuplicate(arrDuplicate) {
@@ -198,7 +198,7 @@ console.log(removeDuplicate(arrDuplicate));
 console.log("\n\n\nEX 10. FIND DIFFERENCE");
 //Write a function to find the difference in 2 given array
 let arrDifference1 = [1, 2, 3, 4, 5]
-let arrDifference2 = [3, 4, 5, 6, 7]
+let arrDifference2 = [3, 4, 5, 6, 7,]
 let differentValue = []
 
 function difference(arrDifference1, arrDifference2) {
@@ -219,6 +219,7 @@ console.log("\n\n\nEX 11. RETURN PRIMITIVE DATA ONLY");
 let arrToPrimitive = [1, [], undefined, {}, "string", {}, []]
 let primitive = []
 
+console.log("<using loop only>");
 function primitiveResult(arrToPrimitive) {
     for ( let i = 0; i < arrToPrimitive.length; i++) {
         if (typeof arrToPrimitive[i] !== "object") {
@@ -227,6 +228,12 @@ function primitiveResult(arrToPrimitive) {
     } return primitive
 }
 console.log(primitiveResult(arrToPrimitive));
+
+console.log("<\nusing loop only>");
+function primitiveresult(arrToPrimitive) {
+    return arrToPrimitive.filter((item) => typeof item != "object")
+}
+console.log(primitiveresult(arrToPrimitive));
 
 
 
@@ -259,6 +266,7 @@ console.log("\n\n\nEX 14. SUM OF DULICATED VALUE");
 let arrDupSum = [10, 20, 40, 10, 50, 30, 10, 60, 10];
 let dupSum = 0
 
+console.log("<specific code>");
 function duplicateSum(arrDupSum) {
     for (let i = 0; i < arrDupSum.length; i++) {
         if ( arrDupSum[i] === arrDupSum[0])
@@ -267,6 +275,17 @@ function duplicateSum(arrDupSum) {
 }
 console.log(duplicateSum(arrDupSum));
 
+console.log("<\nflexible code>");
+function duplicatesum(arrDupSum) {
+    let res = []
+    arrDupSum.sort((a, b) => a - b)
+    for (let i = 0; i < arrDupSum.length; i++) {
+        if (arrDupSum[i] === arrDupSum [i + 1] || arrDupSum[i] === arrDupSum [i - 1]) {
+            res.push(arrDupSum[i])
+        }
+    } return res.reduce((a, b) => a + b)
+}
+console.log(duplicatesum(arrDupSum));
 
 
 console.log("\n\n\nEX 15. ROCK PAPER SCISSOR");
