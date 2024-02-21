@@ -72,7 +72,7 @@ newArrSpread = [...arr, ...newArr2]
 console.log(newArrSpread); // [ 'arya', 2001, false, 123, 456, 789 ]
 
 //sorting array
-descending = newArr2.sort(function(a, b){return b-a});
+descending = newArr2.sort(function(a, b){return b-a});  // or ((a, b) => b-a)
 ascending = newArr2.sort(function(a, b){return a-b});
 
 console.log(descending)
@@ -84,6 +84,7 @@ let toAdd2 = [1,2,3]
 function arrayaddition(toAdd1, toAdd2) {
     return toAdd1.map((item, index) => item + toAdd2[index])
 }
+console.log(arrayaddition(toAdd1, toAdd2));
 
 
 
@@ -91,3 +92,28 @@ function arrayaddition(toAdd1, toAdd2) {
 let arr123 = [1,2,3]
 let [a, b,c] = arr123
 console.log(a);                         //1   
+
+
+
+// Get MAX and MIN
+let arrMinMax = [7, 9, 2, 3, 10]
+var min = Math.min( ...arrMinMax );
+    max = Math.max( ...arrMinMax );
+
+    console.log(min, max);              //2 10
+
+
+
+//INCLUDE
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+console.log(fruits.includes("Banana"));                                  //search from beginning    // true
+console.log(fruits.includes("Banana", 3));                               //search from position 3   // false
+
+
+
+//REVERSE
+let original = ["a", "b", "c"]
+let reversed = [...original].reverse();
+console.log(reversed, original);
+
+

@@ -67,23 +67,33 @@ console.log(Object.keys(user.person));
 
 
 
-//FOR IN loop
-let person = {
-    name: "Frengky",
-    age: 24,
+//Keys and Values
+const band = {
+    vocals: "Robert Plant",
+    guitar: "Jimmy Page",
+    bass: "John Paul Jones",
+    drums: "John Bonham"
 }
-    
-for (let key in person) {
-// keys
-    console. log(key);                  // name, age
-    // values for the keys
-    console. log(person[key]);          // Frengky, 24
+console. log(Object.keys(band));            //["vocals, etc.."]
+console. log(Object.values(band));          //["Robert Plant, etc.."]
+
+
+//FOR IN loop
+for (let job in band) {
+    console.log(`on ${job}, it's ${band[job]}`);                 //Robert Plant etc...
 }
 
+// on vocals, it's Robert Plant
+// on guitar, it's Jimmy Page
+// on bass, it's John Paul Jones
+// on drums, it's John Bonham
 
 
 //destructing
-const person1 = { name: "Budi", age: 20 };
+const person1 = { 
+    name: "Budi", 
+    age: 20
+};
 const { name, age } = person1;                  // { name, age } = { name: "Budi", age: 20 }
 
 console.log(name);                              // Budi
@@ -111,3 +121,30 @@ const person2 = {
     }
 }
 console.log(person2.greet());
+
+//Inheritance
+const vehicle = {
+    wheels: 4,
+    engine: function () {
+    return "Vrroooom!";
+    }
+}
+const truck = Object.create(vehicle);
+truck.doors = 2;
+console.log(truck);                     // {doors: 2}
+console.log(truck.wheels);              // 4 
+console.log(truck.engine());            // Vrroooom!
+
+const car = Object.create(vehicle)
+car.doors = 4
+car.engine = function() {return "Whooosh!"}
+console.log(car.engine());
+
+const tesla = Object.create(car)
+console.log(tesla.wheels);          // 4
+console.log(tesla.engine());        // Whooosh!
+tesla.engine = function () {
+    return "Shhhh..."
+}
+console.log(tesla.engine());        // Shhhh...
+    

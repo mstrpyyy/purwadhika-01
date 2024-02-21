@@ -8,7 +8,7 @@ let number = 22
 console.log(number % 2 === 0 ? `${number} is even` : `${number} is odd`)
 
 //Write a code to check whether the number is prime number or not
-let num = 7
+let num = 10
 let isPrime;
 for (i = 2; i < num; i++) {
     if (num % i === 0) {

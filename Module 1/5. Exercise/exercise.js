@@ -180,7 +180,7 @@ console.log(combineArray(array1, array2));
 
 console.log("\n\n\nEX 9. FIND DUPLICATE");
 //Write a function to find duplicate values in an array
-let arrDuplicate = [1, 2, 2, 2,, 3, 3, 4, 5, 5]
+let arrDuplicate = [1, 2, 2, 2, 3, 3, 4, 5, 5]
 let duplicateValue = []
 
 function removeDuplicate(arrDuplicate) {

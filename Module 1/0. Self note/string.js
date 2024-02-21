@@ -35,3 +35,8 @@ console.log(myVariable.split("e"))
 console.log(myVariable.split(""))
 console.log("Arya, Hanif, Nugroho".split(", "))
 console.log("Arya Hanif Nugroho".split(" "))
+
+//reverse
+let original = "Hello World";
+let reversed = original.split('').reverse().join('');
+console.log(reversed);
