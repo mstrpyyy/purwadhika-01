@@ -114,7 +114,7 @@ console.log("\n");
 //-------------------------------------------------------------------------------------
 //LOOP
 for (let position in manUtd) {   
-    console.log(manUtd[position]);                               // "job" is a variable for KEYS, it loop and show result for each KEY: Hojlund <br> Bruno <br> Maguire
+    console.log(manUtd[position]);                               // "position" is a variable for KEYS, it loop and show result for each KEY: Hojlund <br> Bruno <br> Maguire
     console.log(`on ${position}, it's ${manUtd[position]}`);     // on striker, it's Hojlund etc...
 }
 console.log("\n");

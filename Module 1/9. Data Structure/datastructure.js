@@ -33,20 +33,23 @@ myMap.set(1, '002')                     //advantage of Map is the ability to set
 console.log(myMap);
 
 //LOOP
-for (const value of myMap) {
-    console.log(value);
-}
-for (const [key, value] of myMap) {
-    console.log(`${key} <> ${value}`);
-}
+// for (const value of myMap) {
+//     console.log(value);
+// }
+// for (const [key, value] of myMap) {
+//     console.log(`${key} <> ${value}`);
+// }
 //destructuring the value
 
-let newMap = new Map([
-    ['key1', 'value1'],
-    ['key2', 'value2'],
-    ['key3', 'value3']
-  ]);
-  numbers.forEach(function(element) {
-    console.log(element);
-  });
+// let newMap = new Map([
+//     ['key1', 'value1'],
+//     ['key2', 'value2'],
+//     ['key3', 'value3']
+//   ]);
+//   numbers.forEach(function(element) {
+//     console.log(element);
+//   });
+
+//keys() to return the key of a value
+//get() to return the value of a key
 
